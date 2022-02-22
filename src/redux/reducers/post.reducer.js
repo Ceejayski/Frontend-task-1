@@ -1,7 +1,7 @@
 import {
   ADD_NEW_POST, DELETE_POSTS, ERROR_FETCHING, GET_ALL_POSTS, UPDATE_POST,
 } from '../types';
-import { editPost, removePosts } from '../utils';
+import { createPost, editPost, removePosts } from '../utils';
 
 const INITIAL_STATE = {
   posts: [],
@@ -21,7 +21,7 @@ export default function postReducer(state = INITIAL_STATE, action) {
       };
     case ADD_NEW_POST:
       return {
-        posts: [...state.posts, payload],
+        posts: createPost({ current: state.posts, newPost: payload }),
         loading: false,
         error: '',
       };

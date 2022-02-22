@@ -13,29 +13,26 @@ const getSinglePost = async (id) => {
 };
 
 const createNewPost = async (userId, title, body) => {
-  const headers = {
-    'Content-type': 'application/json; charset=UTF-8',
-  };
-  const data = JSON.stringify({
+  // const headers = {
+  //   'Content-type': 'application/json; charset=UTF-8',
+  // };
+  const data = {
     title,
     body,
     userId,
-  });
-  const response = await axios.post(API_URL, data, headers);
+  };
+  const response = await axios.post(API_URL, data);
   return response.data;
 };
 
 const updatePost = async (id, userId, title, body) => {
-  const headers = {
-    'Content-type': 'application/json; charset=UTF-8',
-  };
-  const data = JSON.stringify({
+  const data = {
     id,
     title,
     body,
     userId,
-  });
-  const response = await axios.patch(API_URL, data, headers);
+  };
+  const response = await axios.patch(`${API_URL}/${id}`, data);
   return response.data;
 };
 
