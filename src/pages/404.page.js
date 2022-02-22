@@ -1,10 +1,10 @@
 import React from 'react';
+import ErrorComponent from '../components/errorComp';
 
 export default function NotFoundPage() {
   return (
     <>
-      <h1>404 ERROR</h1>
-      <p>Page not found</p>
+      <ErrorComponent message="Request failed with status code 404" />
     </>
   );
 }

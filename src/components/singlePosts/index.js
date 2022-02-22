@@ -33,7 +33,7 @@ function SinglePosts({ data, clickHandler }) {
       <div className="post-btn d-flex">
         <div className="me-2">
 
-          <Link to={`/posts/${data.id}`} className="btn btn-warning">edit</Link>
+          <Link to={`/posts/edit/${data.id}`} className="btn btn-warning">edit</Link>
 
         </div>
         <div>
