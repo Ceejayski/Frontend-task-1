@@ -31,7 +31,6 @@ export default function AwardChart() {
       const message = (error.response && error.response.awards && error.response.awards.message)
         || error.message
         || error.toString();
-      console.log(errors);
       setLoading(false);
       setError(message);
     });
