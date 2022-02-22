@@ -15,10 +15,19 @@ function SinglePosts({ data, clickHandler }) {
     >
       <div className="post-texts">
         <div className="post-title">
-          <h5>{data.title}</h5>
+          <h5><Link to={`posts/${data.id}`}>{data.title}</Link></h5>
         </div>
         <div className="post-body">
-          <p className="lead">{data.body}</p>
+          <p
+            className="lead"
+            css={css`white-space: nowrap; 
+  max-width: 220px; 
+  overflow: hidden;
+  text-overflow: ellipsis;`}
+          >
+            {data.body}
+
+          </p>
         </div>
       </div>
       <div className="post-btn d-flex">
